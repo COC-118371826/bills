@@ -55,6 +55,12 @@ public class productadminservlet extends HttpServlet {
             request.setAttribute("product", product);
             request.getRequestDispatcher("/productadmin.jsp").forward(request, response);
         }
+         if (action.equals("updateProduct")){
+            updateProduct(request,response);
+            ArrayList<Product> product = pServ.getAllProduct();
+            request.setAttribute("product", product);
+            request.getRequestDispatcher("/userAdmin.jsp").forward(request, response);
+        }
         else
             request.getRequestDispatcher("/Home").forward(request, response);
        
@@ -79,21 +85,44 @@ public class productadminservlet extends HttpServlet {
         
         String name = request.getParameter("name");
         String description = request.getParameter("description");
-        String price = request.getParameter("price");
+        double price = Double.parseDouble(request.getParameter("price"));
+        
         String imageLocation = request.getParameter("imageLocation");
         String category = request.getParameter("category");
         
-        double dPrice = Double.parseDouble(price);
+        
         
         Product newProduct = new Product();
         newProduct.setName(name);
         newProduct.setDescription(description);
-        newProduct.setPrice(dPrice);
+        newProduct.setPrice(price);
         newProduct.setImageLocation(imageLocation);
         newProduct.setCategory(category);
         
         ProductService pServ = new ProductService();
         pServ.insertProduct(newProduct);
+        
+        
+        
+    }
+   private void updateProduct(HttpServletRequest request, HttpServletResponse response){
+        long id = Long.parseLong(request.getParameter("id"));
+        String name = request.getParameter("name");
+        String description = request.getParameter("description");
+        double price = Double.parseDouble(request.getParameter("price"));
+        String imageLocation = request.getParameter("image_Location");
+        String category = request.getParameter("category");
+        
+        Product newProduct = new Product();
+          newProduct.setId(id);
+        newProduct.setName(name);
+        newProduct.setDescription(description);
+        newProduct.setPrice(price);
+        newProduct.setImageLocation(imageLocation);
+        newProduct.setCategory(category);
+        
+        ProductService pServ = new ProductService();
+        pServ.updateProduct(newProduct);
         
         
         

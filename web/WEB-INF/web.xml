@@ -21,6 +21,22 @@
         <servlet-name>productadminservlet</servlet-name>
         <servlet-class>servlets.productadminservlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>producttype</servlet-name>
+        <servlet-class>servlets.producttype</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AutoCompleteServlet</servlet-name>
+        <servlet-class>com.ajax.AutoCompleteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>producttypeReg</servlet-name>
+        <servlet-class>servlets.producttypeReg</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>producttypeWarning</servlet-name>
+        <servlet-class>servlets.producttypeWarning</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomePageServlet</servlet-name>
         <url-pattern>/Home</url-pattern>
@@ -36,6 +52,22 @@
     <servlet-mapping>
         <servlet-name>productadminservlet</servlet-name>
         <url-pattern>/productadmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>producttype</servlet-name>
+        <url-pattern>/producttype</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AutoCompleteServlet</servlet-name>
+        <url-pattern>/autocomplete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>producttypeReg</servlet-name>
+        <url-pattern>/producttypeReg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>producttypeWarning</servlet-name>
+        <url-pattern>/producttypeWarning</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

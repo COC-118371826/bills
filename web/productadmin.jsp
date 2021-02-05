@@ -113,7 +113,7 @@ background-color: white;
                                         <c:param name="action" value="edit"/>
                                         <c:param name="id" value="${product.id}"/>
                                     </c:url>
-                                    <c:url value="/producadmin" var="deleteproductUrl">
+                                    <c:url value="/productadmin" var="deleteproductUrl">
                                         <c:param name="action" value="delete"/>
                                         <c:param name="id" value="${product.id}"/>
                                     </c:url>

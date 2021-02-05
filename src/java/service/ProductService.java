@@ -21,7 +21,25 @@ public class ProductService {
         return pDao.getTopProducts(10);
         
     }
+     public ArrayList<Product> getInfoProducts(){
         
+        ProductDAO pDao = new ProductDAO();
+        return pDao.getInfoProducts(10);
+        
+    }
+      public ArrayList<Product> getRegProducts(){
+        
+        ProductDAO pDao = new ProductDAO();
+        return pDao.getRegProducts(10);
+        
+    }
+        public ArrayList<Product> getWarningProducts(){
+        
+        ProductDAO pDao = new ProductDAO();
+        return pDao.getWarningProducts(10);
+        
+    }
+         
     
 
    public void insertProduct(Product nproduct){
@@ -37,5 +55,10 @@ public class ProductService {
         return productList;
         
     }
-    
+      public void updateProduct(Product nProduct){
+        ProductDAO pDao = new ProductDAO();
+        pDao.updateProduct(nProduct);
+        return;
+        
+    }
 }

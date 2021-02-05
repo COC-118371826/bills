@@ -246,7 +246,7 @@ border:0 !important;
                 </div>
 
             </div>
-     <br></br>
+     <br>     <br><br><br>
         <!-- Footer -->
   <footer class="py-5 bg-dark"Style="opacity:0.89 !Important; background: -webkit-linear-gradient(right,#007bff,black) !Important;" >
     <div class="container">

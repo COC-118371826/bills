@@ -92,10 +92,20 @@ h4{
             <div class="container">
                 <img src="images/LogoMakr-05a923.png" 
               width="190" height="60"/>
-                 <form name="autofillform" action="autocomplete">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <form name="autofillform" action="autocomplete">
      
-                        <input type="text"
-                       size="40" id="complete-field" placeholder="Search Products"   onkeyup="doCompletion()">
+       
+        
+                                <h6 style="color:white !Important">  <strong>Product Name:</strong></h6>
+                       
+                            <input type="text"
+                       size="40" 
+                       id="complete-field"
+                                   onkeyup="doCompletion()">
                         </td>
           </tr>
           <tr>
@@ -106,11 +116,6 @@ h4{
      
       </table>
     </form>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                   
                     <ul class="navbar-nav ml-auto">
                         
                         <li class="nav-item active">
@@ -154,9 +159,9 @@ h4{
 
                     <h2 class="my-4" style="color:white;style">Product Type:</h2>
                    <div class="list-group">
-          <a href="producttype?action=infoProducts" class="list-group-item">Informative</a>
-           <a href="producttypeReg?action=regProducts" class="list-group-item">Regulatory</a>
-          <a href="producttypeWarning?action=WarningProducts" class="list-group-item">Warning</a>
+          <a href="" class="list-group-item">Informative</a>
+           <a href="" class="list-group-item">Regulatory</a>
+          <a href="" class="list-group-item">Warning</a>
          
         </div>
 
@@ -195,17 +200,17 @@ h4{
  
                     <div class="row">
 
-                        <c:forEach items="${products}" var="topProduct">
+                        <c:forEach items="${products}" var="infoProduct">
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="card h-100">
-                                    <a href="#"><img class="card-img-top" src="images/${topProduct.imageLocation}" alt=""></a>
+                                    <a href="#"><img class="card-img-top" src="images/${infoProduct.imageLocation}" alt=""></a>
                                     <div class="card-body">
                                         <h4 class="card-title">
-                                            <a href="./viewProduct.jsp"><b>Name: </b>${topProduct.name}</a>
+                                            <a href="./viewProduct.jsp"><b>Name: </b>${infoProduct.name}</a>
                                         </h4>
-                                        <h5><b>Price: </b>${topProduct.price}</h5>
-                                        <p class="card-text"><b>Desc:</b>${topProduct.description}</p>
-                                        <p class="card-text"><b>Type: </b>${topProduct.category}</p>
+                                        <h5><b>Price: </b>${infoProduct.price}</h5>
+                                        <p class="card-text"><b>Desc:</b>${infoProduct.description}</p>
+                                        <p class="card-text"><b>Type: </b>${infoProduct.category}</p>
                                     </div>
                                     <div class="card-footer">
                                         <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>

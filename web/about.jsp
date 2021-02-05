@@ -109,7 +109,7 @@
         
 
  
-        <a href="Informative.jsp" class="btn btn-primary btn-lg"><fmt:message key="GetShop"/></a>
+        <a href="Home" class="btn btn-primary btn-lg"><fmt:message key="GetShop"/></a>
       </header>
 
       <!-- Page Features -->
@@ -189,13 +189,13 @@
       <!-- Jumbotron Header -->
       <header class="jumbotron my-4">
         <form style="width:100% !Important;">
-            <h1>Contact us:</h1>
+            <h1><fmt:message key="Contactus"/></h1>
                         <div class="form-group" >
                             <label for="name"><b><fmt:message key="Name"/></b></label>
                             <input type="text" class="form-control" id="name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email"><b>Email address</b></label>
+                            <label for="email"><b><fmt:message key="EmailAdd"/></b></label>
                             <input type="email" class="form-control" id="email"required>
                             <small id="emailHelp" class="form-text text-muted"><fmt:message key="InfoEmail"/></small>
                         </div>
