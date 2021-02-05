@@ -5,58 +5,12 @@
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <style>
         body{
-           background-image: url(https://cdn.pixabay.com/photo/2015/11/07/11/13/street-1030930_1280.jpg)!Important;
+           background-image: url(https://media.giphy.com/media/WZrOaNjFPKT5e/giphy.gif)!Important;
            
         }
-       .dropbtn {
-  background-color: #007bff;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
+ 
 
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #3e8e41;
-}
 
-#myInput {
-  box-sizing: border-box;
-  background-image: url('searchicon.png');
-  background-position: 14px 12px;
-  background-repeat: no-repeat;
-  font-size: 16px;
-  padding: 14px 20px 12px 45px;
-  border: none;
-  border-bottom: 1px solid #ddd;
-}
-
-#myInput:focus {outline: 3px solid #ddd;}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f6f6f6;
-  min-width: 230px;
-  overflow: auto;
-  border: 1px solid #ddd;
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
 h4{
@@ -65,14 +19,26 @@ h4{
 table, td, th {
   border: 1px solid black;
   color:white;
-  background-color: black;
+ 
 }
 
 table {
   width:80%;
   height: 80%;
   border-collapse: collapse;
-  background-color: black;
+ }
+ .hr3 {
+  color: black;
+
+}
+.hr4 {
+  color: black;
+ background: -webkit-linear-gradient(right,white,black);
+ text-align: center;
+}
+table.center {
+  margin-left: auto; 
+  margin-right: auto;
 }
     </style>  
         <meta charset="utf-8">
@@ -116,29 +82,29 @@ table {
     </div>
   </nav>
 <br><br>
-    <table>
-      <tr>
-        <th colspan="2" style="font-size:40px!Important;">Product Information</th>
+    <table class="center">
+      <tr class="hr4">
+          <th colspan="2" style="font-size:40px!Important;"> Product <span class="hr3">Information</span></th>
       </tr>
       <tr>
-          <td style="font-size:40px!Important;"><b>Name:</b> </td>
-        <td style="font-size:40px!Important;">${requestScope.composer.firstName}</td>
+          <td style="font-size:40px!Important;background-color:white !Important;color:black !Important"><b>Name:</b> </td>
+        <td style="font-size:40px!Important;background-color:black !Important">${requestScope.composer.firstName}</td>
       </tr>
       <tr>
-        <td style="font-size:40px!Important;"><b>Price: </b></td>
-        <td style="font-size:40px!Important;">$ ${requestScope.composer.lastName}</td>
+        <td style="font-size:40px!Important;background-color:black !Important""><b>Price: </b></td>
+        <td style="font-size:40px!Important;background-color:white !Important;color:black !Important">$ ${requestScope.composer.lastName}</td>
       </tr>
       <tr>
-        <td style="font-size:40px!Important;"><b>ID: </b> </td>
-        <td style="font-size:40px!Important;">${requestScope.composer.id}</td>
+        <td style="font-size:40px!Important;background-color:white !Important;color:black !Important"><b>ID: </b> </td>
+        <td style="font-size:40px!Important;background-color:black !Important">${requestScope.composer.id}</td>
       </tr>
       <tr>
-        <td style="font-size:40px!Important;"><b>Category: </b> </td>
-        <td style="font-size:40px!Important;">${requestScope.composer.category}</td>
+        <td style="font-size:40px!Important;background-color:black !Important"><b>Category: </b> </td>
+        <td style="font-size:40px!Important;background-color:white !Important;color:black !Important">${requestScope.composer.category}</td>
       </tr>      
     </table>
 
-    <p style="color:white !Important;">Go back to <a href="Home" class="link">All Product Homepage</a>.</p>
+    <p style="color:white !Important; background-color: black !Important;">Go back to <a href="Home" style="color:white !Important;" class="link">All Product Homepage</a>.</p>
   </body>
 </html>
 

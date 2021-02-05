@@ -142,11 +142,11 @@ h4{
       <!-- /.col-lg-3 -->
 
       <div class="col-lg-9">
-<c:url value="/productdmin" var="updateProductUrl">
-                                        <c:param name="action" value="updateProduct"/>
+<<c:url value="/productadmin" var="insertProductUrl">
+                                        <c:param name="action" value="insertProduct"/>
                                     </c:url>
 
-                        <form action="${updateProductUrl}" method="POST">
+                        <form action="${insertProductUrl}" method="POST">
         <div class="card mt-4">
           <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
           <div class="card-body">

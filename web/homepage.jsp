@@ -92,20 +92,7 @@ h4{
             <div class="container">
                 <img src="images/LogoMakr-05a923.png" 
               width="190" height="60"/>
-                 <form name="autofillform" action="autocomplete">
-     
-                        <input type="text"
-                       size="40" id="complete-field" placeholder="Search Products"   onkeyup="doCompletion()">
-                        </td>
-          </tr>
-          <tr>
-              <td id="auto-row" colspan="2">
-                <table id="complete-table" class="popupBox" />
-              </td>
-        
-     
-      </table>
-    </form>
+             
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -139,7 +126,16 @@ h4{
               <a class="nav-link" href="cart.jsp"><img src="images/cart.png"
               width="30" height="20"/>                
               </a></li>
-                        
+                         <li class="nav-item">
+                  
+                 
+              <a class="nav-link" href="index1.jsp"><img src="https://media.giphy.com/media/Mh9fsz5AolnDq/giphy.gif"
+              width="30" height="20"/>
+              </a>
+         
+            
+            
+            </li>
                     </ul>
                 </div>
             </div>
@@ -154,6 +150,21 @@ h4{
 
                     <h2 class="my-4" style="color:white;style">Product Type:</h2>
                    <div class="list-group">
+                           <form name="autofillform" action="autocomplete">
+                     
+                        <input type="text"
+                       size="40" id="complete-field" placeholder="Search Products"   onkeyup="doCompletion()">
+                       
+         
+          <tr>
+              <td id="auto-row" colspan="2">
+                <table id="complete-table" class="popupBox" />
+              </td>
+        
+     
+      </table>
+    </form>
+                       <a href="Home" class="list-group-item">All Products</a>
           <a href="producttype?action=infoProducts" class="list-group-item">Informative</a>
            <a href="producttypeReg?action=regProducts" class="list-group-item">Regulatory</a>
           <a href="producttypeWarning?action=WarningProducts" class="list-group-item">Warning</a>
@@ -210,7 +221,12 @@ h4{
                                     <div class="card-footer">
                                         <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                                     </div>
-                                   
+                                   <form  action="" method="POST">
+                 <c:if test="${not empty SKUSER.firstName}">
+<!--                <input type="hidden" name="productCode" value="7">-->
+                <input type="submit" value="View Item"style= "width:100% !Important;padding:10px !Important;color: white !Important;background-color: #007bff !Important;">
+      </c:if>
+            </form><!--<a href="cart?productCode=8601">Add To Cart</a>-->
                 
             
                                 </div>

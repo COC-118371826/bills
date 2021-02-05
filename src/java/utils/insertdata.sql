@@ -45,6 +45,15 @@ VALUES('T Junction','Indicates T Junction ahead',10,'tjunction.png','Warning');
 INSERT INTO PRODUCTS(NAME,DESCRIPTION,PRICE,IMAGE_LOCATION,CATEGORY)
 VALUES('Slippery Road','Indicates Slippery Road ahead',5,'traffic-sign-3015228_1280.png','Warning');
 
+INSERT INTO PRODUCTS(NAME,DESCRIPTION,PRICE,IMAGE_LOCATION,CATEGORY)
+VALUES('Traffic Merge','Indicates Traffic Merge ahead',8,'leftturn.png','Regulatory');
+
+INSERT INTO PRODUCTS(NAME,DESCRIPTION,PRICE,IMAGE_LOCATION,CATEGORY)
+VALUES('Road Works','Indicates Road Works ahead',4,'roadwork.png','Warning');
+
+INSERT INTO PRODUCTS(NAME,DESCRIPTION,PRICE,IMAGE_LOCATION,CATEGORY)
+VALUES('Roundabout','Indicates Roundabout ahead',3,'roudnabout.png','Warning');
+
 
 
 

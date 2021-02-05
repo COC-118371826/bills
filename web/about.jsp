@@ -84,10 +84,11 @@
               </a></li>
                 <li class="nav-item">
                   
+                 
               <a class="nav-link" href="index1.jsp"><img src="https://media.giphy.com/media/ErPDvrEYZYNOM/giphy.gif"
               width="30" height="20"/>
               </a>
-           
+         
             
             
             </li>

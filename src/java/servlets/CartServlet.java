@@ -65,7 +65,7 @@ public class CartServlet extends HttpServlet {
                 quantity = 1;
             }
 
-            String path = sc.getRealPath("/WEB-INF/products.txt");
+            String path = sc.getRealPath("jdbc:derby://localhost:1527/acme-products;create=true");
             Product product = ProductIO.getProduct(Integer.valueOf(productCode), path);
 
             LineItem lineItem = new LineItem();

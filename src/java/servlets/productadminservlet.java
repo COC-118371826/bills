@@ -7,15 +7,16 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.Double.parseDouble;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Product;
-import model.User;
+
 import service.ProductService;
-import service.UserService;
+
 
 /**
  *
@@ -41,24 +42,24 @@ public class productadminservlet extends HttpServlet {
         String url = null;
         if (action == null)
             request.getRequestDispatcher("/Home").forward(request, response);
-        if (action.equals("listProduct")){
-            ArrayList<Product> product = pServ.getAllProduct();
-            request.setAttribute("product", product);
-            request.getRequestDispatcher("/userAdmin.jsp").forward(request, response);
+        if (action.equals("listProducts")){
+            ArrayList<Product> products = pServ.getAllProduct();
+            request.setAttribute("products", products);
+            request.getRequestDispatcher("/productadmin.jsp").forward(request, response);
         }
         if (action.equals("add")){
             request.getRequestDispatcher("/addproduct.jsp").forward(request, response);
         }
         if (action.equals("insertProduct")){
             insertProduct(request,response);
-            ArrayList<Product> product = pServ.getAllProduct();
-            request.setAttribute("product", product);
+            ArrayList<Product> products = pServ.getAllProduct();
+            request.setAttribute("products", products);
             request.getRequestDispatcher("/productadmin.jsp").forward(request, response);
         }
          if (action.equals("updateProduct")){
             updateProduct(request,response);
-            ArrayList<Product> product = pServ.getAllProduct();
-            request.setAttribute("product", product);
+            ArrayList<Product> products = pServ.getAllProduct();
+            request.setAttribute("product", products);
             request.getRequestDispatcher("/userAdmin.jsp").forward(request, response);
         }
         else
@@ -85,17 +86,16 @@ public class productadminservlet extends HttpServlet {
         
         String name = request.getParameter("name");
         String description = request.getParameter("description");
-        double price = Double.parseDouble(request.getParameter("price"));
-        
+        String price = request.getParameter("price");
         String imageLocation = request.getParameter("imageLocation");
         String category = request.getParameter("category");
-        
+     Double priceDBl = Double.valueOf(price);
         
         
         Product newProduct = new Product();
         newProduct.setName(name);
         newProduct.setDescription(description);
-        newProduct.setPrice(price);
+        newProduct.setPrice(priceDBl);
         newProduct.setImageLocation(imageLocation);
         newProduct.setCategory(category);
         

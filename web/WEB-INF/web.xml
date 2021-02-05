@@ -9,6 +9,10 @@
         <servlet-class>servlets.LoginServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>servlets.CartServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>DbInitServlet</servlet-name>
         <servlet-class>utils.DbInitServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
@@ -68,6 +72,10 @@
     <servlet-mapping>
         <servlet-name>producttypeWarning</servlet-name>
         <url-pattern>/producttypeWarning</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/cart</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

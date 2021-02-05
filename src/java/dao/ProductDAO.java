@@ -70,6 +70,44 @@ public class ProductDAO {
       
         return productData;
     }
+    public Product getProductById(long productId) {
+
+        DBManager dmbgr = new DBManager();
+        Connection con = dmbgr.getConnection();
+        String name = null;
+        String description = null;
+        float price = 0.0f;
+        String imageLocation = null;
+        String category = null;
+        Product tempProduct = new Product();
+
+        String query = String.format("SELECT * FROM PRODUCTS WHERE PRODUCT_ID=%d",productId);
+        try {
+            PreparedStatement stmt = con.prepareStatement(query);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                name = (rs.getString(2));
+                description = (rs.getString(3));
+                price = (rs.getFloat(4));
+                imageLocation = (rs.getString(5));
+                category = (rs.getString(6));
+                
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+tempProduct.setId(productId);
+        tempProduct.setName(name);
+     
+        tempProduct.setDescription(description);
+        tempProduct.setPrice(price);
+        tempProduct.setImageLocation(imageLocation);
+        tempProduct.setCategory(category);
+        return tempProduct;
+
+    }
+
          public ArrayList<Product> getInfoProducts(int numProducts){
         
         

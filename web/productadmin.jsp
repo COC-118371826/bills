@@ -1,6 +1,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="model.User"%>
+<%@page import="model.Product"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
     <head>   <style>
@@ -67,7 +68,7 @@ background-color: white;
                                 <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                                 Users
                             </a>
-                            <a class="nav-link" href="updateProduct.jsp">
+                            <a class="nav-link" href="productadmin?action=insertProduct">
                                 <div class="sb-nav-link-icon"><i class="fas fa-sign"></i></div>
                                 Update Products
                             </a>
@@ -108,7 +109,7 @@ background-color: white;
                                 </tr>
                             </thead>
                             <tbody>
-                                <c:forEach items="${product}" var="user">
+                                <c:forEach items="${products}" var="product">
                                     <c:url value="/productadmin" var="editproductUrl">
                                         <c:param name="action" value="edit"/>
                                         <c:param name="id" value="${product.id}"/>
@@ -122,6 +123,8 @@ background-color: white;
                                     <td>${product.name}</td>
                                     <td>${product.description}</td>
                                     <td>${product.price}</td>
+                                    <td>${product.imageLocation}</td>
+                                    <td>${product.category}</td>
                                     <td><a href="${editproductUrl}"> Edit</a> <a href="${deleteproductUrl}">Delete</a></td>
                                 </tr>
                                 </c:forEach>
