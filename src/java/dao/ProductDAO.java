@@ -256,7 +256,7 @@ tempProduct.setId(productId);
         int id = 0;
         String name = null;
         String description = null;
-        String price = null;
+        float price = 0.0f;
         String imageLocation = null;
         String category = null;
         ArrayList<Product> productData = new ArrayList();
@@ -269,16 +269,16 @@ tempProduct.setId(productId);
                 id = (rs.getInt(1));
                 name = (rs.getString(2));
                 description = (rs.getString(3));
-                price = (rs.getString(4));
+                price = (rs.getFloat(4));
                 imageLocation = (rs.getString(5));
                 category = (rs.getString(6));
-                float dPrice = Float.parseFloat(price);
+               
                 Product tempProduct = new Product();
                 tempProduct.setId(id);
                 tempProduct.setName(name);
             
                 tempProduct.setDescription(description);
-                tempProduct.setPrice(dPrice);
+                tempProduct.setPrice(price);
                 tempProduct.setImageLocation(imageLocation);
                 tempProduct.setCategory(category);
                 productData.add(tempProduct);

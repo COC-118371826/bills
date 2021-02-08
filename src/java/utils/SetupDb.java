@@ -77,7 +77,7 @@ public class SetupDb {
 
         try {
             stmt = con.createStatement();
-            ResultSet results = stmt.executeQuery("select * from PRODUCTS1");
+            ResultSet results = stmt.executeQuery("select * from PRODUCTS");
 
             System.out.println("\n-------------------------------------------------");
 

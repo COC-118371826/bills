@@ -43,7 +43,7 @@ public class productadminservlet extends HttpServlet {
         if (action == null)
             request.getRequestDispatcher("/Home").forward(request, response);
         if (action.equals("listProducts")){
-            ArrayList<Product> products = pServ.getAllProduct();
+            ArrayList<Product> products = pServ.getHomePageProducts();
             request.setAttribute("products", products);
             request.getRequestDispatcher("/productadmin.jsp").forward(request, response);
         }
@@ -86,16 +86,16 @@ public class productadminservlet extends HttpServlet {
         
         String name = request.getParameter("name");
         String description = request.getParameter("description");
-        String price = request.getParameter("price");
+        Float price = Float.valueOf(request.getParameter("price"));
         String imageLocation = request.getParameter("imageLocation");
         String category = request.getParameter("category");
-     Double priceDBl = Double.valueOf(price);
+      
         
         
         Product newProduct = new Product();
         newProduct.setName(name);
         newProduct.setDescription(description);
-        newProduct.setPrice(priceDBl);
+        newProduct.setPrice(price);
         newProduct.setImageLocation(imageLocation);
         newProduct.setCategory(category);
         

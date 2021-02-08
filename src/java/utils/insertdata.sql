@@ -22,7 +22,7 @@ INSERT INTO PRODUCTS(NAME,DESCRIPTION,PRICE,IMAGE_LOCATION,CATEGORY)
 VALUES('Hospital ','Indicates Hospital Ahead',6,'H.png','Informative');
 
 INSERT INTO PRODUCTS(NAME,DESCRIPTION,PRICE,IMAGE_LOCATION,CATEGORY)
-VALUES('Airport','Indicates there is an Airport Ahead',4,'airport.png','Informative');
+VALUES('Airport','Indicates an Aiport is ahead',4,'airport.png','Informative');
 
 INSERT INTO PRODUCTS(NAME,DESCRIPTION,PRICE,IMAGE_LOCATION,CATEGORY)
 VALUES('One Way','Indicates ONLY one way Ahead',3,'one way.png','Informative');
