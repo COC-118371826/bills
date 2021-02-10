@@ -50,18 +50,50 @@ public class productadminservlet extends HttpServlet {
         if (action.equals("add")){
             request.getRequestDispatcher("/addproduct.jsp").forward(request, response);
         }
-        if (action.equals("insertProduct")){
-            insertProduct(request,response);
-            ArrayList<Product> products = pServ.getAllProduct();
+     
+         if (action.equals("delete")){
+            deleteProduct(request,response);
+            ArrayList<Product> products = pServ.getAllProducts();
             request.setAttribute("products", products);
             request.getRequestDispatcher("/productadmin.jsp").forward(request, response);
         }
-         if (action.equals("updateProduct")){
+         if (action.equals("updateCompleteProduct")){
             updateProduct(request,response);
-            ArrayList<Product> products = pServ.getAllProduct();
-            request.setAttribute("product", products);
-            request.getRequestDispatcher("/userAdmin.jsp").forward(request, response);
+            ArrayList<Product> products = pServ.getAllProducts();
+            request.setAttribute("products", products);
+            request.getRequestDispatcher("/productadmin.jsp").forward(request, response);
         }
+            if (action.equals("edit")){
+            String productId = request.getParameter("id");
+            if (productId == null)
+                request.getRequestDispatcher("/Home").forward(request, response);
+            else {
+          long pId = Long.parseLong(productId);
+          pServ = new ProductService();
+          Product oldProduct = pServ.getProduct(pId);
+          request.setAttribute("oldProduct", oldProduct);
+          request.getRequestDispatcher("/editProduct.jsp").forward(request, response);
+        }
+         }if (action.equals("view")){
+            String productId = request.getParameter("id");
+            if (productId == null)
+                request.getRequestDispatcher("/Home").forward(request, response);
+            else {
+          long pId = Long.parseLong(productId);
+          pServ = new ProductService();
+          Product oldProduct = pServ.getProduct(pId);
+          request.setAttribute("oldProduct", oldProduct);
+          request.getRequestDispatcher("/viewProduct.jsp").forward(request, response);
+        }
+         }
+             if (action.equals("insertProduct")){
+            insertProduct(request,response);
+            ArrayList<Product> products = pServ.getAllProducts();
+            request.setAttribute("products", products);
+            request.getRequestDispatcher("/productadmin.jsp").forward(request, response);
+        }
+          
+         
         else
             request.getRequestDispatcher("/Home").forward(request, response);
        
@@ -81,15 +113,21 @@ public class productadminservlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
+     private void deleteProduct(HttpServletRequest request, HttpServletResponse response){
+    long productId = Long.parseLong(request.getParameter("id"));
+    ProductService pServ = new ProductService();
+    pServ.deleteProduct(productId);
+    return;
+    }
 
    private void insertProduct(HttpServletRequest request, HttpServletResponse response){
         
         String name = request.getParameter("name");
         String description = request.getParameter("description");
-        Float price = Float.valueOf(request.getParameter("price"));
+        float price = Float.parseFloat(request.getParameter("price"));
         String imageLocation = request.getParameter("imageLocation");
         String category = request.getParameter("category");
-      
+     
         
         
         Product newProduct = new Product();
@@ -109,12 +147,12 @@ public class productadminservlet extends HttpServlet {
         long id = Long.parseLong(request.getParameter("id"));
         String name = request.getParameter("name");
         String description = request.getParameter("description");
-        double price = Double.parseDouble(request.getParameter("price"));
+        float price = Float.parseFloat(request.getParameter("price"));
         String imageLocation = request.getParameter("image_Location");
         String category = request.getParameter("category");
         
         Product newProduct = new Product();
-          newProduct.setId(id);
+        newProduct.setId(id);
         newProduct.setName(name);
         newProduct.setDescription(description);
         newProduct.setPrice(price);

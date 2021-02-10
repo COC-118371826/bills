@@ -1,5 +1,5 @@
 INSERT INTO USERDATA(EMAIL,PASSWORD,FNAME,LNAME,USERTYPE)
-VALUES('admin@admin.com', 'admin', 'System', 'Administrator','ADMIN');
+VALUES('admin@admin.com', 'admin', 'System User', 'Administrator','ADMIN');
 
 INSERT INTO USERDATA(EMAIL,PASSWORD,FNAME,LNAME,USERTYPE)
 VALUES('user@user.com', 'user', 'John Murphy', 'User','GENUSER');

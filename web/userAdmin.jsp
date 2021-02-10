@@ -63,11 +63,11 @@ background-color: white;
                             
                         
                             
-                            <a class="nav-link" href="users.jsp">
+                            <a class="nav-link" href="userAdmin?action=listUsers">
                                 <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                                 Users
                             </a>
-                            <a class="nav-link" href="productadmin?action=insertProduct">
+                            <a class="nav-link" href="productadmin?action=listProducts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-sign"></i></div>
                                 Update Products
                             </a>

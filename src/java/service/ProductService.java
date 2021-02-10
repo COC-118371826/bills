@@ -42,18 +42,19 @@ public class ProductService {
          
     
 
-   public void insertProduct(Product nproduct){
+   public void insertProduct(Product nProduct){
         ProductDAO pDao = new ProductDAO();
-        pDao.insertProduct(nproduct);
+        pDao.insertProduct(nProduct);
         return;
         
     }
-    public ArrayList<Product> getAllProduct(){
+    public ArrayList<Product> getAllProducts(){
        
         ProductDAO pDao = new ProductDAO();
-        ArrayList<Product> productList = pDao.getAllProduct();
+        ArrayList<Product> productList = pDao.getAllProducts();
         return productList;
         
+      
     }
       public void updateProduct(Product nProduct){
         ProductDAO pDao = new ProductDAO();
@@ -61,11 +62,15 @@ public class ProductService {
         return;
         
     }
-       public Product getProduct(long productId){
+       public void deleteProduct(long productId){
+        ProductDAO pDao = new ProductDAO();
+        pDao.deleteProduct(productId);
+        return;
+       }
+        public Product getProduct(long productId){
        
-        ProductDAO uDao = new ProductDAO();
-        Product product = uDao.getProductById(productId);
+        ProductDAO pDao = new ProductDAO();
+        Product product = pDao.getProductById(productId);
         return product;
-        
-    }
+}
 }

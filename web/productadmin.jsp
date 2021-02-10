@@ -64,11 +64,11 @@ background-color: white;
                             
                         
                             
-                            <a class="nav-link" href="userAdmin?action=insertUser">
+                            <a class="nav-link" href="userAdmin?action=listUsers">
                                 <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                                 Users
                             </a>
-                            <a class="nav-link" href="productadmin?action=insertProduct">
+                            <a class="nav-link" href="productadmin?action=listProducts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-sign"></i></div>
                                 Update Products
                             </a>
@@ -90,7 +90,7 @@ background-color: white;
                     <div class="container-fluid">
                        <div class="heading text-center">
                            
-                            <h2>Manage User</h2>
+                            <h2>Manage Product</h2>
                         </div>
 
                         <div style="margin-left: 5%; margin-right: 5%;"> 
@@ -133,7 +133,7 @@ background-color: white;
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <c:url value="/productdmin" var="addproductUrl">
+                                    <c:url value="/productadmin" var="addproductUrl">
                                         <c:param name="action" value="add"/>
                                     </c:url>
                                     <td><a href="${addproductUrl}" > Add </a></td>

@@ -83,10 +83,12 @@ public class SetupDb {
 
             while (results.next()) {
                 int id = results.getInt(1);
-                String userName = results.getString(2);
-                String fName = results.getString(1);
-                String lName = results.getString(6);
-                logger.info(id + "\t\t" + userName + "\t\t" + fName + "\t\t" + lName);
+                String name = results.getString(2);
+                String description = results.getString(3);
+                float price = results.getFloat(4);
+                String imageLocation = results.getString(5);
+                String category = results.getString(6);
+                logger.info(id + "\t\t" + name + "\t\t" + description + "\t\t" + price + "\t\t" + imageLocation + "\t\t" + category );
             }
             results.close();
             stmt.close();

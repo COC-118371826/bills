@@ -137,7 +137,7 @@
               <p class="card-text"><fmt:message key="InfoInformative"/></p>
             </div>
             <div class="card-footer">
-              <a href="Home" class="btn btn-primary"><fmt:message key="Buy"/>!</a>
+              <a href="producttype?action=infoProducts" class="btn btn-primary"><fmt:message key="Buy"/>!</a>
             </div>
           </div>
         </div>
@@ -150,7 +150,7 @@
               <p class="card-text"><fmt:message key="InfoRegulatory"/>  </p>
             </div>
             <div class="card-footer">
-              <a href="Home" class="btn btn-primary"><fmt:message key="Buy"/>!</a>
+              <a href="producttypeReg?action=regProducts" class="btn btn-primary"><fmt:message key="Buy"/>!</a>
             </div>
           </div>
         </div>
@@ -163,7 +163,7 @@
               <p class="card-text"><fmt:message key="InfoWarning"/></p>
             </div>
             <div class="card-footer">
-              <a href="Home" class="btn btn-primary"><fmt:message key="Buy"/>!</a>
+              <a href="producttypeWarning?action=WarningProducts" class="btn btn-primary"><fmt:message key="Buy"/>!</a>
             </div>
           </div>
         </div>

@@ -130,7 +130,7 @@ public class userAdminServlet extends HttpServlet {
         String userType = request.getParameter("userType");
         
         User newUser = new User();
-          newUser.setId(id);
+        newUser.setId(id);
         newUser.setEmail(email);
         newUser.setPassword(password);
         newUser.setFirstName(firstName);

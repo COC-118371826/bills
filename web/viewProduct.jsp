@@ -9,6 +9,17 @@ body{
            background-image: url(https://cdn.pixabay.com/photo/2015/11/07/11/13/street-1030930_1280.jpg)!Important;
            
         }
+        .button {
+  background-color: blue; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+}
        .dropbtn {
   background-color: #007bff;
   color: white;
@@ -62,6 +73,27 @@ body{
 .show {display: block;}
 h4{
     color:white;
+}
+.myButton {
+	box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	padding:12px 76px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
 }
     </style>  
         <meta charset="utf-8">
@@ -142,18 +174,18 @@ h4{
       <!-- /.col-lg-3 -->
 
       <div class="col-lg-9">
-<<c:url value="/productadmin" var="insertProductUrl">
-                                        <c:param name="action" value="insertProduct"/>
-                                    </c:url>
+
 
                         <form action="${insertProductUrl}" method="POST">
         <div class="card mt-4">
-          <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
+          <img class="card-img-top" style="height:300px !Important" src="images/${oldProduct.imageLocation}" alt="">
           <div class="card-body">
-              <input id= "id" name="id" type="hidden" value="${oldProduct.id}">
-             <input id="name" name="name" type="text" value="${oldProduct.name}" class="form-control" required="required">
-            <input id="price" name="price" type="text" value="${oldProduct.price}" class="form-control" required="required">
-            <input id="description" name="description" type="text" value="${oldProduct.description}" class="form-control" required="required">
+                 <input id= "id" name="id" type="hidden" value="${oldProduct.id}">
+                 <h5><b>Name: </b>${oldProduct.name}</h5>
+                 <h5><b>Price: </b>${oldProduct.price}</h5>
+                 <h5><b>Description: </b>${oldProduct.description}</h5>
+                 <h5><b>Category: </b>${oldProduct.category}</h5>
+                
             <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
             4.0 stars
           </div>
@@ -166,8 +198,11 @@ h4{
             Let's Go Shopping!
           </div>
           <div class="card-body">
-         
-            <a href="#" class="btn btn-success">Add to Cart</a>
+          <c:if test="${not empty SKUSER.firstName}">
+            <a href="cart.jsp" class="btn myButton">Add to Cart</a>
+               </c:if><c:if test="${ empty SKUSER.firstName}">
+            <a href="" class="btn myButton">You must be Logged IN!</a>
+               </c:if>
           </div>
         </div>
         <!-- /.card -->

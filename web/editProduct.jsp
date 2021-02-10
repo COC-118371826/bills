@@ -1,6 +1,6 @@
 <%-- 
-    Document   : addproduct
-    Created on : 8 Feb 2021, 22:44:12
+    Document   : editProduct
+    Created on : 9 Feb 2021, 11:22:51
     Author     : cilli
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -71,47 +71,49 @@
 
                 <div class="col-lg-12">
 
-                    <h1 class="my-4">Add New User</h1>
+                    <h1 class="my-4">Edit Product</h1>
 
 
 
                     <div class="row">
-                        <c:url value="/productadmin" var="insertProductUrl">
-                                        <c:param name="action" value="insertProduct"/>
+                        <c:url value="/productadmin" var="updateProductUrl">
+                                        <c:param name="action" value="updateCompleteProduct"/>
                                     </c:url>
 
-                        <form action="${insertProductUrl}" method="POST">
+                        <form action="${updateProductUrl}" method="POST">
+                            <input id= "id" name="id" type="hidden" value="${oldProduct.id}">
                             <div class="form-group row">
-                                <label for="name" class="col-5 col-form-label">Name</label> 
+                                <label for="name" class="col-4 col-form-label">Name</label> 
                                 <div class="col-8">
-                                    <input id="name" name="name" type="text" class="form-control" required="required">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="description" class="col-5 col-form-label">Description</label> 
-                                <div class="col-8">
-                                    <input id="description" name="description" type="text" class="form-control" required="required">
+                                    <input id="name" name="name" type="text" value="${oldProduct.name}" class="form-control" required="required">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="price" class="col-5 col-form-label">Price</label> 
+                                <label for="description" class="col-4 col-form-label">Description</label> 
                                 <div class="col-8">
-                                    <input id="price" name="price" type="text" class="form-control" required="required">
+                                    <input id="description" name="description" type="text" value="${oldProduct.description}" class="form-control" required="required">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="imageLocation" class="col-5 col-form-label">Image Location</label> 
+                                <label for="price" class="col-4 col-form-label">Price</label> 
                                 <div class="col-8">
-                                    <input id="imageLocation" name="imageLocation" type="text" class="form-control" required="required">
+                                    <input id="price" name="price" type="text" value="${oldProduct.price}" class="form-control" required="required">
                                 </div>
                             </div>
-                             <div class="form-group row">
-                                <label for="category" class="col-5 col-form-label">Category</label> 
+                            <div class="form-group row">
+                                <label for="imageLocation" class="col-4 col-form-label">Image</label> 
                                 <div class="col-8">
-                                    <input id="category" name="category" type="text" class="form-control" required="required">
+                                    <input id="imageLocation" name="imageLocation" type="text" value="${oldProduct.imageLocation}" class="form-control" required="required">
                                 </div>
                             </div>
-                            
+                         <div class="form-group row">
+                                <label for="category" class="col-4 col-form-label">Category</label> 
+                                <div class="col-8">
+                                    <input id="category" name="category" type="text" value="${oldProduct.category}" class="form-control" required="required">
+                                </div>
+                            </div>
+                         
+                            </div> 
                             <div class="form-group row">
                                 <div class="offset-4 col-8">
                                     <button name="submit" type="submit" class="btn btn-primary">Submit</button>
@@ -158,3 +160,4 @@
     </body>
 
 </html>
+

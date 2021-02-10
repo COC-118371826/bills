@@ -193,23 +193,17 @@ border:0 !important;
     </nav>
 
   <!-- Page Content -->
+  
   <div class="container register">
                 <div class="row">
                     <div class="col-md-3 register-left" Style="opacity:0.89 !Important;">
                         <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
                         <h3>Welcome</h3>
                         <p>From: The Sign Shop Login:</p>
-                        <form method="get" action="register.jsp">
-                        <input type="submit" name="" value="Register"/><br/> 
-                        </form>
+                       
                     </div>
                     <div class="col-md-9 register-right">
-                        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="register.jsp" role="tab" aria-controls="home" aria-selected="true">New User?</a>
-                            </li>
-
-                        </ul>
+                       
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <h3 class="register-heading">Login</h3>

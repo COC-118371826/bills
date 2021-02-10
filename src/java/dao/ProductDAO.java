@@ -249,11 +249,11 @@ tempProduct.setId(productId);
       
         return productData;
           }
-    public ArrayList<Product> getAllProduct() {
+    public ArrayList<Product> getAllProducts() {
 
         DBManager dm = new DBManager();
         Connection con = dm.getConnection();
-        int id = 0;
+        int ProductId = 0;
         String name = null;
         String description = null;
         float price = 0.0f;
@@ -261,22 +261,20 @@ tempProduct.setId(productId);
         String category = null;
         ArrayList<Product> productData = new ArrayList();
 
-        String query = "SELECT * FROM PRODUCT";
+        String query = "SELECT * FROM PRODUCTS";
         try {
             PreparedStatement stmt = con.prepareStatement(query);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                id = (rs.getInt(1));
+                ProductId = (rs.getInt(1));
                 name = (rs.getString(2));
                 description = (rs.getString(3));
                 price = (rs.getFloat(4));
                 imageLocation = (rs.getString(5));
                 category = (rs.getString(6));
-               
                 Product tempProduct = new Product();
-                tempProduct.setId(id);
                 tempProduct.setName(name);
-            
+                tempProduct.setId(ProductId);
                 tempProduct.setDescription(description);
                 tempProduct.setPrice(price);
                 tempProduct.setImageLocation(imageLocation);
@@ -301,8 +299,8 @@ tempProduct.setId(productId);
         try {
         
             stmt = con.createStatement();
-            String sql = String.format("INSERT INTO PRODUCTDATA(NAME,DESCRIPTION,PRICE,IMAGE_LOCATION,CATEGORY) " + 
-                            "VALUES('%s','%s','%s','%s','%s')",newProduct.getName(),newProduct.getDescription(),newProduct.getPrice(),newProduct.getImageLocation(),newProduct.getCategory());
+            String sql = String.format("INSERT INTO PRODUCTS(NAME,DESCRIPTION,PRICE,IMAGE_LOCATION,CATEGORY) " + 
+                            "VALUES('%s','%s',%s,'%s','%s')",newProduct.getName(),newProduct.getDescription(),newProduct.getPrice(),newProduct.getImageLocation(),newProduct.getCategory());
             stmt.executeUpdate(sql);
         }
         catch (SQLException e){
@@ -326,7 +324,7 @@ tempProduct.setId(productId);
         try {
         
             stmt = con.createStatement();
-            String sql = String.format("UPDATE Product SET name='%s',description='%s',price='%s',imageLocation='%s',category='%s' where product_id=%d ",newProduct.getName(),newProduct.getDescription(),newProduct.getPrice(),newProduct.getImageLocation(),newProduct.getCategory(),newProduct.getId());
+            String sql = String.format("UPDATE PRODUCTS SET name='%s',description='%s',price=%s ,imageLocation='%s',category='%s' where product_id=%d ",newProduct.getName(),newProduct.getDescription(),newProduct.getPrice(),newProduct.getImageLocation(),newProduct.getCategory(),newProduct.getId());
             stmt.executeUpdate(sql);
         }
         catch (SQLException e){
@@ -341,4 +339,30 @@ tempProduct.setId(productId);
         }
         
     }
+      public void deleteProduct(long productId){
+        
+        DBManager dmbgr = new DBManager();
+        Connection con = dmbgr.getConnection();
+        Statement stmt = null;
+        
+        try {
+        
+            stmt = con.createStatement();
+            String sql = String.format("DELETE FROM PRODUCTS WHERE PRODUCT_ID=%d",productId);
+            stmt.executeUpdate(sql);
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+         }finally {
+            try {
+                stmt.close();
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        
+    }
+      
+
 }

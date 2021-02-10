@@ -64,6 +64,27 @@
 h4{
     color:white;
 }
+.myButton {
+	box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	padding:12px 76px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
     </style>  
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -209,23 +230,23 @@ h4{
                         <c:forEach items="${products}" var="topProduct">
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="card h-100">
-                                    <a href="#"><img class="card-img-top" src="images/${topProduct.imageLocation}" alt=""></a>
+                                    <a href=""><img class="card-img-top" src="images/${topProduct.imageLocation}" alt=""></a>
                                     <div class="card-body">
                                         <h4 class="card-title">
-                                            <a href="./viewProduct.jsp"><b>Name: </b>${topProduct.name}</a>
+                                            <b>Name: </b>${topProduct.name}</a>
                                         </h4>
                                         <h5><b>Price: </b>${topProduct.price}</h5>
-                                        <p class="card-text"><b>Desc:</b>${topProduct.description}</p>
-                                        <p class="card-text"><b>Type: </b>${topProduct.category}</p>
+                                        <p class="card-text"><b>Description: </b>${topProduct.description}</p>
+                                        <p class="card-text"><b>Category: </b>${topProduct.category}</p>
                                     </div>
                                     <div class="card-footer">
                                         <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                                     </div>
-                                   <form  action="" method="POST">
-                 <c:if test="${not empty SKUSER.firstName}">
-<!--                <input type="hidden" name="productCode" value="7">-->
-                <input type="submit" value="View Item"style= "width:100% !Important;padding:10px !Important;color: white !Important;background-color: #007bff !Important;">
-      </c:if>
+                                  <c:url value="/productadmin" var="viewproductUrl">
+                                        <c:param name="action" value="view"/>
+                                        <c:param name="id" value="${topProduct.id}"/>
+                                    </c:url>
+                                    <a href="${viewproductUrl}"class="btn myButton">View Product</a>
             </form><!--<a href="cart?productCode=8601">Add To Cart</a>-->
                 
             
