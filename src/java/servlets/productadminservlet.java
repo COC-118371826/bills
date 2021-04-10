@@ -43,7 +43,7 @@ public class productadminservlet extends HttpServlet {
         if (action == null)
             request.getRequestDispatcher("/Home").forward(request, response);
         if (action.equals("listProducts")){
-            ArrayList<Product> products = pServ.getHomePageProducts();
+            ArrayList<Product> products = pServ.getAllProducts();
             request.setAttribute("products", products);
             request.getRequestDispatcher("/productadmin.jsp").forward(request, response);
         }
@@ -84,6 +84,17 @@ public class productadminservlet extends HttpServlet {
           Product oldProduct = pServ.getProduct(pId);
           request.setAttribute("oldProduct", oldProduct);
           request.getRequestDispatcher("/viewProduct.jsp").forward(request, response);
+        }
+         }if (action.equals("cart")){
+            String productId = request.getParameter("id");
+            if (productId == null)
+                request.getRequestDispatcher("/Home").forward(request, response);
+            else {
+          long pId = Long.parseLong(productId);
+          pServ = new ProductService();
+          Product oldProduct = pServ.getProduct(pId);
+          request.setAttribute("oldProduct", oldProduct);
+          request.getRequestDispatcher("/cart.jsp").forward(request, response);
         }
          }
              if (action.equals("insertProduct")){

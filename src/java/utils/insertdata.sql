@@ -2,7 +2,7 @@ INSERT INTO USERDATA(EMAIL,PASSWORD,FNAME,LNAME,USERTYPE)
 VALUES('admin@admin.com', 'admin', 'System User', 'Administrator','ADMIN');
 
 INSERT INTO USERDATA(EMAIL,PASSWORD,FNAME,LNAME,USERTYPE)
-VALUES('user@user.com', 'user', 'John Murphy', 'User','GENUSER');
+VALUES('user@user.com', 'user', 'John', 'Murphy','GENUSER');
 INSERT INTO USERDATA(EMAIL,PASSWORD,FNAME,LNAME,USERTYPE)
 VALUES('user1@user.com', 'mypassword', 'Donald', 'User','GENUSER');
 

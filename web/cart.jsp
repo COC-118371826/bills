@@ -70,36 +70,37 @@ background-color: white;
   <table class="w3-table w3-striped w3-border">
   <tr>
     <th>Quantity</th>
-    <th>Name - Description</th>
+    <th>Name </th>
+        <th>Description</th>
     <th>Price</th>
-    <th>Amount</th>
+    <th>Total</th>
   
   </tr>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:forEach var="item" items="${cart.items}">
+
   <tr>
     <td>
-      <form action="" method="post">
-        <input type="hidden" name="productCode" value="${item.product.id}">
-        <input type=text name="quantity" value="${item.quantity}" id="quantity">
-        <input type="submit" value="Update">
+      <form action="${insertProductUrl}" method="POST">
+        <input type="hidden" name="productCode" value="${oldProduct.id}">
+      
       </form>
     </td>
-    <td>${item.product.getProductDescription()}</td>
-    <td>${item.product.getProductPrice()}</td>
-    <td>${item.totalCurrencyFormat}</td>
+    <td>"${oldProduct.name}"</td>
+    <td>"${oldProduct.description}"</td>
+    <td>"${oldProduct.price}"</td>
+    <td>"${oldProduct.price}"</td>
     <td>
       <form action="" method="post">
         <input type="hidden" name="productCode" 
-               value="${item.product.id}">
+               value="${oldProduct.id}">
         <input type="hidden" name="quantity" 
                value="0">
         <input type="submit" value="Remove Item">
       </form>
     </td>
   </tr>
-</c:forEach>
+
 </table>
 </div>
 <p style="color:black;background-color:white"><b>To change the quantity</b>, enter the new quantity 

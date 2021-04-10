@@ -75,8 +75,21 @@
             <li class="nav-item">
                 <a class="nav-link" href="Home"><fmt:message key="Product"/></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.jsp"><fmt:message key="Login"/></a>
+           
+                <c:if test="${not empty SKUSER.firstName}">
+                                <a class="nav-link" href="./login.jsp"  Style="color:white !important;"><fmt:message key="Welcome1"/> ${SKUSER.firstName}
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                                                                    <a class="nav-link" href="./Logout.jsp"  Style="color:white !important;"><fmt:message key="Logout"/>
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </c:if>
+                             <c:if test="${empty SKUSER.firstName}">
+                                <a class="nav-link" href="./login.jsp"  Style="color:white !important;"><fmt:message key="Login"/>
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </c:if>
+             
             </li>
             <li class="nav-item">
               <a class="nav-link" href="cart.jsp"><img src="images/cart.png"

@@ -87,23 +87,27 @@
       <form class="needs-validation" novalidate action="OrderConfirmation.jsp">
         <div class="row">
           <div class="col-md-6 mb-3">
+               <c:if test="${not empty SKUSER.firstName}">
             <label for="FullName">FullName</label>
-            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+            <input type="text" class="form-control" id="firstName" placeholder="" value="${SKUSER.firstName} ${SKUSER.lastName}" required readonly>
             <div class="invalid-feedback">
               Valid FullName is required.
             </div>
+             </c:if>
           </div>
-          
+           
         </div>
 
      
 
         <div class="mb-3">
+            <c:if test="${not empty SKUSER.firstName}">
           <label for="email">Email <span class="text-muted"></span></label>
-          <input type="email" class="form-control" id="email" placeholder="you@example.com">
+          <input type="email" class="form-control" id="email" value="${SKUSER.email}" requiered readonly>
           <div class="invalid-feedback">
             Valid Email is required
           </div>
+             </c:if>
         </div>
 
         <div class="mb-3">
@@ -174,12 +178,14 @@
         </div>
         <div class="row">
           <div class="col-md-6 mb-3">
+               <c:if test="${not empty SKUSER.firstName}">
             <label for="cc-name">Name on card</label>
-            <input type="text" class="form-control" id="cc-name" placeholder="" required>
+            <input type="text" class="form-control" id="cc-name" value="${SKUSER.firstName} ${SKUSER.lastName}"  readonly required>
             <small class="text-muted">Full name as displayed on card</small>
             <div class="invalid-feedback">
               Name on card is required
             </div>
+               </c:if>
           </div>
           <div class="col-md-6 mb-3">
             <label for="cc-number">Credit card number</label>
@@ -216,6 +222,18 @@
 
  
 </div>
+         <br>
+         <br>
+          <footer class="py-5 bg-dark"Style="opacity:0.89 !Important; " >
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; The Sign Shop 2020</p>
+            <a href="https://www.facebook.com/"><img width="60" height="60" src="images/fb.png" title="facebook" alt="facebook"></a>
+      <a href="https://www.Twitter.com/"><img width="60" height="60" src="images/twitter.jpg" title="twitter" alt="twitter"></a>
+      <a href="https://www.Youtube.com/"><img width="60" height="60" src="images/youtube.jpg" title="youtube" alt="youtube"></a>
+
+    </div>
+
+  </footer>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
         <script src="form-validation.js"></script></body>

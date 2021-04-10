@@ -123,6 +123,7 @@ h4{
             <div class="container">
                 <img src="images/LogoMakr-05a923.png" 
               width="190" height="60"/>
+                
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -168,7 +169,7 @@ h4{
     <div class="row">
 
       <div class="col-lg-3">
-        <h1 class="my-4" style="color:white !Important">Product View</h1>
+          <h1 class="my-4" style="color:white !Important"><u>Product View:</u></h1>
         
       </div>
       <!-- /.col-lg-3 -->
@@ -178,7 +179,7 @@ h4{
 
                         <form action="${insertProductUrl}" method="POST">
         <div class="card mt-4">
-          <img class="card-img-top" style="height:300px !Important" src="images/${oldProduct.imageLocation}" alt="">
+          <img class="card-img-top" style="height:300px !Important;width:80% !Important;margin:auto !Important" src="images/${oldProduct.imageLocation}" alt="">
           <div class="card-body">
                  <input id= "id" name="id" type="hidden" value="${oldProduct.id}">
                  <h5><b>Name: </b>${oldProduct.name}</h5>
@@ -199,9 +200,14 @@ h4{
           </div>
           <div class="card-body">
           <c:if test="${not empty SKUSER.firstName}">
-            <a href="cart.jsp" class="btn myButton">Add to Cart</a>
+               <c:url value="/productadmin" var="cartproductUrl">
+                                        <c:param name="action" value="cart"/>
+                                        <c:param name="id" value="${oldProduct.id}"/>
+                                    </c:url>
+                                    <a href="${cartproductUrl}"class="btn myButton">Add to Cart</a>
+           
                </c:if><c:if test="${ empty SKUSER.firstName}">
-            <a href="" class="btn myButton">You must be Logged IN!</a>
+            <a href="login.jsp" class="btn myButton">You must be Logged IN!</a>
                </c:if>
           </div>
         </div>

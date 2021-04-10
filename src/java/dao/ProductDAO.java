@@ -324,8 +324,8 @@ tempProduct.setId(productId);
         try {
         
             stmt = con.createStatement();
-            String sql = String.format("UPDATE PRODUCTS SET name='%s',description='%s',price=%s ,imageLocation='%s',category='%s' where product_id=%d ",newProduct.getName(),newProduct.getDescription(),newProduct.getPrice(),newProduct.getImageLocation(),newProduct.getCategory(),newProduct.getId());
-            stmt.executeUpdate(sql);
+           String sql = String.format("UPDATE PRODUCTS SET NAME='%s',DESCRIPTION='%s',PRICE=%s,IMAGELOCATION='%s',CATEGORY='%s' where PRODUCT_ID=%d ",newProduct.getName(),newProduct.getDescription(),newProduct.getPrice(),newProduct.getImageLocation(),newProduct.getCategory(),newProduct.getId()); 
+           stmt.executeUpdate(sql);
         }
         catch (SQLException e){
             e.printStackTrace();
